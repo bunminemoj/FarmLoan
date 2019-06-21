@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1>Wanna Smile like this too?</h1>
+    <p style="text-align: center; color: darkred">You're logged in!</p>
 @endsection

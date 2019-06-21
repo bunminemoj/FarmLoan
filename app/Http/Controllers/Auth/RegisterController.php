@@ -71,6 +71,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
+            'age_range' => $data['age_range'],
+            'phone' => $data['phone'],
+            'bvn' => $data['bvn'],
+            'farm_location' => $data['farm_location']
         ]);
         //$user->notify(new UserActivate($user));
         return $user;
@@ -86,9 +90,8 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-
-        return redirect()->route('login')
-            ->with(['success' => 'Congratulations! your account is registered, you will shortly receive an email to activate your account.']);
+        $request->session()->flash('alert-success', 'Congratulations! your account is registered, you will shortly receive an email to activate your account');
+        return redirect()->route('login');
     }
 
     /**
