@@ -40,6 +40,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="age_range" class="col-md-4 col-form-label text-md-right">{{ __('Age Range') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="age_range" type="text" class="form-control @error('age_range') is-invalid @enderror" name="age_range" value="{{ old('age_range') }}" required autocomplete="age_range" autofocus>
+
+                                @error('age_range')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
@@ -64,6 +78,34 @@
                                         <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="farm_location" class="col-md-4 col-form-label text-md-right">{{ __('Farm Location') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="farm_location" type="text" class="form-control @error('farm_location') is-invalid @enderror" name="farm_location" value="{{ old('farm_location') }}" required autocomplete="farm_location" autofocus>
+
+                                @error('farm_location')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="bvn" class="col-md-4 col-form-label text-md-right">{{ __('Bank Verification Number(BVN)') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="bvn" type="text" class="form-control @error('bvn') is-invalid @enderror" name="bvn" value="{{ old('bvn') }}" required autocomplete="bvn" autofocus>
+
+                                @error('bvn')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
