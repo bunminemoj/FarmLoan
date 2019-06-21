@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Auth::routes();
+Route::get('activate/{token}', 'Auth\RegisterController@activate')
+    ->name('activate');
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', function() {
+    return view('homepage.index');
 });
